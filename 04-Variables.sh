@@ -5,9 +5,9 @@ PASSWORD=$2
 
 echo "Please enter User Name::"
 
-read USERNAME
+read -s USERNAME
 
-echo "Please enter Password::"
+echo -s "Please enter Password::"
 
 read PASSWORD
 
