@@ -7,9 +7,9 @@ echo "Please enter User Name::"
 
 read -s USERNAME
 
-echo -s "Please enter Password::"
+echo "Please enter Password::"
 
-read PASSWORD
+read -s PASSWORD
 
 echo "User Name is :: $USERNAME"
 echo "User Name is :: $PASSWORD"
