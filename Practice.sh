@@ -13,10 +13,10 @@ echo -e "Script Execution Started at :: $Y $DATE $N"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$R ERROR:: $N Installing $2 FAILED"
+        echo -e "$R ERROR:: $N Installing $2 $R FAILED $N"
         exit 1
     else
-        echo "Installing $2 SUCCESS"
+        echo "Installing $2 $G SUCCESS $N"
     fi 
 }
 
