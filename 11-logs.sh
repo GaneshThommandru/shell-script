@@ -9,19 +9,19 @@ N="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo "ERROR:: Installing $2 $R FAILED $N"
+        echo -e "ERROR:: Installing $2 $R FAILED $N"
         exit 1
     else
-        echo "Installing $2 $G SUCCESS $N"
+        echo -e "Installing $2 $G SUCCESS $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then
-    echo "$R ERROR $N:: Please run this script with root access" 
+    echo -e "$R ERROR $N:: Please run this script with root access" 
     exit 1 # You can give other than zero
 else
-    echo "$G You are root user $N"
+    echo -e "$G You are root user $N"
 fi # fi means reverse of if, indicating condition end
 
 dnf install mysql -y &>> $LOGFILE
