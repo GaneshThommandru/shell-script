@@ -6,8 +6,9 @@ R="\e[33m"
 G="\e[32m"
 Y="\e[31m"
 N="\e[0m"
+LOGFILE="/tmp/$0-$DATE.log"
 
-echo "Script Execution Started at :: $Y $DATE $N"
+echo -e "Script Execution Started at :: $Y $DATE $N"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -27,10 +28,10 @@ else
     echo -e "$G You are a root user $N"
 fi
 
-yum install mysql -y
+yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "MySQL...."
 
-yum install git -y
+yum install git -y &>> $LOGFILE
 
 VALIDATE $? "GIT...."
