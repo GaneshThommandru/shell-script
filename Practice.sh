@@ -1,34 +1,35 @@
 #!/bin/bash
 
 ID=$(id -u)
-DATE=$(date)
+DATE=$(date +%f-%H:%M:%S)
 R="\e[33m"
 G="\e[32m"
 Y="\e[31m"
 N="\e[0m"
 
-echo "Script Execution Started at :: $DATE"
+echo "Script Execution Started at :: $Y $DATE $N"
 
 VALIDATE(){
-    if [ $0 -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo "ERROR:: Installing $1 FAILED"
+        echo -e "$R ERROR:: $N Installing $2 FAILED"
+        exit 1
     else
-        echo "Installing $1 SUCCESS"
+        echo "Installing $2 SUCCESS"
 }
 
 if [ $ID -ne 0 ]
 then
-    echo "$R ERROR:: $N Please run as root user"
+    echo -e "$R ERROR:: $N Please run as root user"
     exit 1
 else
-    echo "$G You are a root user $N"
+    echo -e "$G You are a root user $N"
 fi
 
 yum install mysql -y
 
-VALIDATE "MySQL...."
+VALIDATE $? "MySQL...."
 
 yum install git -y
 
-VALIDATE "GIT...."
+VALIDATE $? "GIT...."
