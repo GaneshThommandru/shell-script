@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ID=$(id -u)
-DATE=$(date %F-%H:%M:%S)
+TIMESTAMP=$(date +%F-%H:%M:%S)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-LOGFILE="/tmp/$0-$DATE.log"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo -e "Script Execution Started at :: $Y $DATE $N"
 
