@@ -5,7 +5,7 @@ ID=$(id -u)
 if [ $ID -ne 0 ]
 then
     echo "ERROR:: Please run this script with root access"
-    EXIT 1 # You can give other than zero
+    exit 1 # You can give other than zero
 else
     echo "You are root user"
 fi # fi means reverse of if, indicating condition end
@@ -15,7 +15,7 @@ dnf install mysqll -y
 if [ $? -ne 0 ]
 then 
     echo "ERROR:: Installing MySQL FAILED"
-    EXIT 1
+    exit 1
 else
     echo "Installing MySQL is SUCCESS"
 fi
