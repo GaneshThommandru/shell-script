@@ -2,7 +2,7 @@
 
 echo "Enter a Number:: "
 
-read $NUM
+read NUM
 
 if [ $NUM -gt 100 ]
 then
