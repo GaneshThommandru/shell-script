@@ -8,7 +8,7 @@ Y="\e[33m"
 N="\e[0m"
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo -e "Script Execution Started at :: $Y $DATE $N"
+echo -e "Script Execution Started at :: $Y $TIMESTAMP $N"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
