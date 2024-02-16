@@ -3,9 +3,9 @@
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
-RED=\e[31m
-GREEN=\e[32m
-NORMAL=\e[0m
+RED="\e[31m"
+GREEN="\e[32m"
+NORMAL="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
