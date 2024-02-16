@@ -23,3 +23,7 @@ fi # fi means reverse of if, indicating condition end
 dnf install mysql -y
 
 VALIDATE
+
+dnf isntall git -y
+
+VALIDATE
