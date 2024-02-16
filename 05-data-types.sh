@@ -2,7 +2,13 @@
 
 NUMBER1=$1
 NUMBER2=$2
+ARGSPASSED=$#
+ALLARGS=$@
 
 SUM=$(($NUMBER1+$NUMBER2))
 
-echo "Total ::$SUM"
+echo "Number of args passed:: $ARGSPASSED"
+
+echo "All Args :: $ALLARGS"
+
+echo "Total Sum ::$SUM"
