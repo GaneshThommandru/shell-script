@@ -3,12 +3,12 @@
 ID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then 
-        echo "ERROR:: Installing FAILED"
+        echo "ERROR:: Installing $2 FAILED"
         exit 1
     else
-        echo "Installing is SUCCESS"
+        echo "Installing $2 is SUCCESS"
     fi
 }
 
@@ -22,8 +22,8 @@ fi # fi means reverse of if, indicating condition end
 
 dnf install mysql -y
 
-VALIDATE
+VALIDATE $? "MySQL"
 
 dnf install git -y
 
-VALIDATE
+VALIDATE $? "GIT"
