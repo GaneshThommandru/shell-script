@@ -11,3 +11,11 @@ else
 fi # fi means reverse of if, indicating condition end
 
 dnf install mysql -y
+
+if [ $? -ne 0 ]
+then 
+    echo "ERROR:: Installing MySQL FAILED"
+    EXIT 1
+else
+    echo "Installing MySQL is SUCCESS"
+fi
