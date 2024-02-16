@@ -5,9 +5,10 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
-echo "Script execution started at:: $TIMESTAMP" &>> $LOGFILE
+echo -e "Script execution started at:: $Y $TIMESTAMP $N" &>> $LOGFILE
 
 VALIDATE(){
     if [ $1 -ne 0 ]
