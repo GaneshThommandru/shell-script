@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ID=$(id -u)
-DATE=$(date +%f-%H:%M:%S)
-R="\e[33m"
+DATE=$(date %F-%H:%M:%S)
+R="\e[31m"
 G="\e[32m"
-Y="\e[31m"
+Y="\e[33m"
 N="\e[0m"
 LOGFILE="/tmp/$0-$DATE.log"
 
@@ -16,7 +16,7 @@ VALIDATE(){
         echo -e "$R ERROR:: $N Installing $2 $R FAILED $N"
         exit 1
     else
-        echo "Installing $2 $G SUCCESS $N"
+        echo -e "Installing $2 $G SUCCESS $N"
     fi 
 }
 
