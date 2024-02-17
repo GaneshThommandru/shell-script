@@ -15,4 +15,4 @@ else
     echo -e "$G You are root user $N"
 fi
 
-echo "All arguments passed:: "
+echo "All arguments passed:: $@"
