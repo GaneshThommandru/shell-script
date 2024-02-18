@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ID=$(id -u)
-R="\e[31n"
-G="\e[32n"
-Y="\e[33n"
-N="\e[0n"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
@@ -28,19 +28,18 @@ else
 fi
 
 #Check & Copy the Mongodb repo file to repos directory
-test -f /etc/yum.repos.d/mongo.repo
+test -f /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 if [ $? -ne 0 ]
 then    
     cp /home/centos/shell-script/mongo.repo /etc/yum.repos.d/mongo.repo  &>> $LOGFILE
+    VALIDATE $? "Copying MongoDB repo"
 else
     echo -e "mongo.repo file already exists in repos directory .....$Y SKIPPING $N"
 fi
 
-VALIDATE $? "Copying MongoDB repo"
-
 #Validate whether the Mongo
-yum list installed mongodb-org
+yum list installed mongodb-org &>> $LOGFILE
 
 if [ $? -ne 0 ]
 then
