@@ -58,7 +58,7 @@ VALIDATE $? "Starting mongod"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 
-VALIDATE $? "Updating the Listening Address"
+VALIDATE $? "Adding remote access to MongoDB"
 
 systemctl restart mongod
 
