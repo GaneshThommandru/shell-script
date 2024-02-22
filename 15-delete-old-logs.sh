@@ -14,7 +14,7 @@ then
     echo -e "$R Error:: Source Directory does not exists $N"
 fi
 
-FILES_TO_DELETE=$(find /tmp/shell-script -type f -mtime +14 -name "*.log")
+FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
 
 while IFS= read -r line
 do
