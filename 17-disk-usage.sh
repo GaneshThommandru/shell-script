@@ -15,4 +15,4 @@ do
     fi
 done <<< $DISK_USAGE
 
-echo -e "Message:\n $message"
+echo -e "Message:\n$message"
