@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 SOURCE_DIR="/tmp/shellscript-logs/"
-test -f $SOURCE_DIR
+test -d $SOURCE_DIR
 
 if [ $? -ne 0 ]
 then
