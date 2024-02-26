@@ -7,4 +7,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-echo -e "$R Check the applied color $N"
+test -f /tmp/shellscript-logs
+
+if [ $? -ne 0 ]
+then
+    echo -e "ERROR:: Source Directory not found"
+    exit 1
+fi
+
