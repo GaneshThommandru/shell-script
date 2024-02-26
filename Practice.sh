@@ -11,7 +11,7 @@ test -f /tmp/shellscript-logs
 
 if [ $? -ne 0 ]
 then
-    echo -e "ERROR:: Source Directory not found"
+    echo -e "$R ERROR::$N Source Directory not found"
     exit 1
 fi
 
