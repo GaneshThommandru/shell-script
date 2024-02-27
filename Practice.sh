@@ -14,4 +14,4 @@ done <<< $DISK_USAGE
 
 echo -e "Message:\n$message"
 
-echo -e "$message" | mail -s "High Disk Usage" 121fa04206@gmail.com
+echo -e "$message" | mail -s "High Disk Usage" ganeshkumar.tommandru@gmail.com
