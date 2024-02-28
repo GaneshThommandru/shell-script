@@ -3,9 +3,10 @@
 TO_TEAM=$1
 ALERT_TYPE=$2
 BODY=$3
+ESCAPED_BODY=$(printf '%s\n' "$BODY" | sed -e 's/[]\/$*.^[]/\\&/g');
 TO_ADDRESS=$4
 SUBJECT=$5
 
-FINAL_BODY=$(sed -e 's/TO_TEAM/$TO_TEAM/g' -e 's/ALERT_TYPE/$ALERT_TYPE/g' -e 's/BODY/$BODY/g' template.html)
+FINAL_BODY=$(sed -e "s/TO_TEAM/$TO_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e "s/BODY/$ESCAPED_BODY/g" template.html)
 
-echo -e "$FINAL_BODY" | mail -s "$(echo -e "$SUBJECT\nContent-Type: text/html")" "$TO_ADDRESS"
+echo "$FINAL_BODY" | mail -s "$(echo -e "$SUBJECT\nContent-Type: text/html")" "$TO_ADDRESS"
