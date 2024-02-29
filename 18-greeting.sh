@@ -1,5 +1,21 @@
 #!/bin/bash
 
-PERSON=$1
+NAME=""
+WISHES=""
 
-echo "Hello $PERSON, Good Morning. we are learning Shell script"
+USAGE(){
+    echo "USAGE:: $(basename $0) -n <name> -w <wishes>"
+    echo "Options::"
+    echo "-n, specifies the name(mandatory)"
+    echo "-w, specifies the wishes. ex, Good Morning"
+    echo "-h, Displays Help and Exit" 
+}
+
+while getopts ":n:W:h" opt; do
+    case $opt in
+        n) NAME="$OPTARG";;
+        w) WISHES="$OPTARG";;
+        h|*) USAGE; exit;;
+    esac
+
+done
