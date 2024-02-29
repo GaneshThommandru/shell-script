@@ -11,7 +11,7 @@ USAGE(){
     echo "-h, Displays Help and Exit" 
 }
 
-while getopts ":n:W:h" opt; do
+while getopts ":n:w:h" opt; do
     case $opt in
         n) NAME="$OPTARG";;
         w) WISHES="$OPTARG";;
@@ -19,7 +19,6 @@ while getopts ":n:W:h" opt; do
         :0) USAGE; exit;;
         h) USAGE; exit;;
     esac
-
 done
 
 if [ -z "$NAME" ] || [ -z "$WISHES" ]; then
