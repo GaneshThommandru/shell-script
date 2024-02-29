@@ -15,7 +15,17 @@ while getopts ":n:W:h" opt; do
     case $opt in
         n) NAME="$OPTARG";;
         w) WISHES="$OPTARG";;
-        h|*| :) USAGE; exit;;
+        \?) echo "invalid options: -"$OPTARG"" >&2; USAGE; exit;;
+        :0) USAGE; exit;;
+        h) USAGE; exit;;
     esac
 
 done
+
+if [ -z "$NAME" ] || [ -z "$WISHES" ]; then
+    echo "ERROR:: Both -n and -w are madatory options"
+    USAGE;
+    exit 1
+fi
+
+echo "Hello $NAME. $WISHES. I have learning Shell Script."
